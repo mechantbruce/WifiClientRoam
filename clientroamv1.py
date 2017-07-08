@@ -16,7 +16,10 @@ def apple():
         channel = 'Ch:' + re.search(r'channel.+', output).group(0).split()[-1]
         txrate = 'TX:' + re.search(r'lastTxRate.+', output).group(0).split()[-1]
         signal = 'Signal:' + re.search(r'CtlRSSI.+', output).group(0).split()[-1]  
-        noise = 'Noise' + re.search(r'agrCtlNoise.+', output).group(0).split()[-1]          
+        noise = 'Noise' + re.search(r'agrCtlNoise.+', output).group(0).split()[-1]   
+        signal1 = int(re.search(r'CtlRSSI.+', output).group(0).split()[-1])
+        noise1 = int(re.search(r'agrCtlNoise.+', output).group(0).split()[-1])
+        SNR = 'SNR:' + str( signal1 - noise1 )
     except AttributeError:
         print 'No data'
         pass
