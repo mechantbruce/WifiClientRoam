@@ -24,7 +24,7 @@ def apple():
         print 'No data'
         pass
     clock = time.asctime().split()[3]
-    print clock, ssid, bssid, channel, txrate, noise, signal
+    print clock, ssid, bssid, channel, txrate, noise, signal, SNR
     time.sleep(1)
 
 def microsoft():
